@@ -19,4 +19,7 @@ class EvenementSportif extends Model
     public function athletes(){
         return $this->hasManyThrough(Athlete::class,Categorie::class);
     }
+    public function commentaires(){
+        return $this->morphMany(Commentaire::class,'commentable');
+    }
 }
