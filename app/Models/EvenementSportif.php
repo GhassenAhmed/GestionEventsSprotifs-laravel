@@ -3,6 +3,7 @@
 namespace App\Models;
 use App\Models\User;
 use App\Models\Categorie;
+use App\Models\Athlete;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,5 +15,8 @@ class EvenementSportif extends Model
     }
     public function categories(){
         return $this->hasMany(Categorie::class);
+    }
+    public function athletes(){
+        return $this->hasManyThrough(Athlete::class,Categorie::class);
     }
 }
