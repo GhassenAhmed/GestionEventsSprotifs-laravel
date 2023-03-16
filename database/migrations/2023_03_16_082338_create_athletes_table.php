@@ -15,6 +15,11 @@ class CreateAthletesTable extends Migration
     {
         Schema::create('athletes', function (Blueprint $table) {
             $table->id();
+            $table->string('nom',100);
+            $table->string('prenom',60);
+            $table->enum('sexe',['HOMME','FEMME']);
+            $table->string('photo');
+            $table->integer('score')->default(0)->unsigned();
             $table->timestamps();
         });
     }
