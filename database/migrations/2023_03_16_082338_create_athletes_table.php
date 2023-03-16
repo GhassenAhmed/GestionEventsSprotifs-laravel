@@ -20,6 +20,8 @@ class CreateAthletesTable extends Migration
             $table->enum('sexe',['HOMME','FEMME']);
             $table->string('photo');
             $table->integer('score')->default(0)->unsigned();
+            $table->foreignId('categorie_id')->constrained()->onDelete('cascade');
+            $table->foreignId('equipe_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

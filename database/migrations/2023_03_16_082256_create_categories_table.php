@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('nom',100);
             $table->enum('sexe',['HOME','FEMME']);
             $table->string('poids',20);
+            $table->foreignId('evenement_sprotif_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
