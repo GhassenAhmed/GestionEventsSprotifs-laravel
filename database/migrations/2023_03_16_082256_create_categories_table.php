@@ -16,9 +16,9 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('nom',100);
-            $table->enum('sexe',['HOME','FEMME']);
+            $table->enum('sexe',['HOMME','FEMME']);
             $table->string('poids',20);
-            $table->foreignId('evenement_sprotif_id')->constrained()->onDelete('cascade');
+            $table->foreignId('evenement_sportif_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

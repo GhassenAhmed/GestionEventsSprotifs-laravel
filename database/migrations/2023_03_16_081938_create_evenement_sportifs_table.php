@@ -22,7 +22,7 @@ class CreateEvenementSportifsTable extends Migration
             $table->date('dateDebut');
             $table->date('dateFin');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('categorie_id')->constrained()->onDelete('cascade');
+            $table->foreignId('categorie_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
