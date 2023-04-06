@@ -53,16 +53,18 @@ class UserSeeder extends Seeder
                 )
                 ->hasCommentaires(2)
 
-                            );
-        User::factory(2)->has(Role::factory()->count(2)
-                                        ->state(new Sequence(
+                            )
+                            ->has(Role::factory()->count(2)
+                            ->state(new Sequence(
 
-                                                ['nom'=>'Admin'],
-                                                ['nom'=>'User'],
-                                                ['nom'=>'Manager']
+                                    ['nom'=>'Admin'],
+                                    ['nom'=>'User'],
+                                    ['nom'=>'Manager']
 
-                                        ))
-        )
-        ->create();
+                            ))
+)
+                            ->create();
+
+
     }
 }
