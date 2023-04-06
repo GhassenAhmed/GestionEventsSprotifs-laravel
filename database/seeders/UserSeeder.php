@@ -8,6 +8,7 @@ use App\Models\Categorie;
 use App\Models\EvenementSportif;
 use App\Models\Equipe;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 
 
@@ -52,6 +53,15 @@ class UserSeeder extends Seeder
                 )
                 ->hasCommentaires(2)
 
+                            );
+        User::factory(2)->has(Role::factory()->count(2)
+                                        ->state(new Sequence(
+
+                                                ['nom'=>'Admin'],
+                                                ['nom'=>'User'],
+                                                ['nom'=>'Manager']
+
+                                        ))
         )
         ->create();
     }
