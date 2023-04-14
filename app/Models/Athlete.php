@@ -15,7 +15,5 @@ class Athlete extends Model
     public function equipe(){
         return $this->belongsTo(Equipe::class);
     }
-    public function commentaires(){
-        return $this->morphMany(Commentaire::class,'commentable');
-    }
+   
 }
