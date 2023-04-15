@@ -8,7 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Commentaire extends Model
 {
     use HasFactory;
-    public function commentable(){
-        return $this->morphTo();
-    }
+   
 }
