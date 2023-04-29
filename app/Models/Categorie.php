@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 class Categorie extends Model
 {
    
-   
+   public function evennement(){
+        return $this->belongsTo(EvenementSportif::class);
+    }
  public function athletes(){
         return $this->hasMany(Athlete::class);
     }
