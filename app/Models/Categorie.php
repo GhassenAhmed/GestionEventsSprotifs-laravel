@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Categorie extends Model
 {
-    use HasFactory;
-    public function evennement(){
-        return $this->belongsTo(EvenementSportif::class);
-    }
+   
    
  public function athletes(){
         return $this->hasMany(Athlete::class);
