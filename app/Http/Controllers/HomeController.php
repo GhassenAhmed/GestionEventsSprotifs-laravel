@@ -7,15 +7,21 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function __invoke(Request $request)
     {
-        $eventSportifs=EvenementSportif::all();
+        $eventsSportifs = EvenementSportif::all();
         $data=[
-            "titel"=>"Evènement sportif",
-            "description"=>"Liste des evénement sportifs",
-            "heading"=>config("app.name"),
-            "eventsSportifs"=>$eventSportifs
+            'title'=> 'Evènnements sportifs',
+            'description'=>'Liste des évènnements sportifs',
+            'heading'=> config('app.name'),
+            'eventSportifs' => $eventsSportifs
         ];
-        return view("home.index",$data);
+        return view('home.index',$data);
     }
 }
